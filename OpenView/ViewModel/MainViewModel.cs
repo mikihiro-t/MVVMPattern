@@ -26,7 +26,7 @@ namespace OpenView
         public MainViewModel()
         {
             //■1
-            //if(Model==null)  Model = new MainManager(); //こうすると、Modelは、Currentになるので、全てのViewで同じModelを利用することになる。
+            //if(Model==null)  Model = new MainManager(); //Modelがすでにある時は、ModelはMainManager.Currentになるので、全てのViewで同じModelを利用することになる。
 
             //■2
             Model = new MainManager();

@@ -37,7 +37,7 @@ namespace OpenView
 
         public MainManager()
         {
-            Current = this;  //イニシャライズされるたびにCurrentは変わる。　MainManager自体はstaticで無いので複数のインスタンスがある。けれども、Currentは、そのうち、最新のMainMagagerになる。
+            Current = this;  //イニシャライズされるたびにCurrentは変わる。　MainManager自体はstaticで無いので複数のインスタンスがありえる。けれども、Currentは、そのうち、最新のMainMagagerになる。
 
             Count += 1;
             Title = Count + "番目のMainView";
