@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace OpenView2
+namespace ShowView2
 {
 
     public partial class SubView : Window

@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace OpenView
+namespace ShowView1
 {
     /// <summary>
     /// Interaction logic for App.xaml

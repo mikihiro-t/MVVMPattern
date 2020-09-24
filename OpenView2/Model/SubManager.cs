@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace OpenView2
+namespace ShowView2
 {
     class SubManager : INotifyPropertyChanged
     {
@@ -27,7 +27,6 @@ namespace OpenView2
 
         public SubManager()
         {
-
             Count += 1;
             Title = Count + "番目のMainView";
 

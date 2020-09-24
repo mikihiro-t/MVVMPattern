@@ -2,10 +2,12 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace OpenView
+namespace ShowView1
 {
     class MainManager : INotifyPropertyChanged
     {
+
+        //■2 MainManagerが1つのみなら、Currentを利用してViewModelに、Modelをセットできる。
         //public static MainManager Current { get; set; }
 
 
@@ -35,6 +37,7 @@ namespace OpenView
 
         public MainManager()
         {
+            //■2
             //Current = this;  //イニシャライズされるたびにCurrentは変わる。　MainManager自体はstaticで無いので複数のインスタンスがありえる。けれども、Currentは、最後にNewされたMainMagagerになる。
 
             Count += 1;
@@ -45,7 +48,6 @@ namespace OpenView
         public void Calculate()
         {
             Text2 = Text1 + " added";
-
         }
 
         #region INotifyPropertyChanged

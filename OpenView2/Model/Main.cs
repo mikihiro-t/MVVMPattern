@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace OpenView2
+namespace ShowView2
 {
     class Main
     {

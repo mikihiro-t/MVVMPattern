@@ -1,8 +1,8 @@
 ﻿<Application
-    x:Class="OpenView.App"
+    x:Class="ShowView1.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:OpenView"
+    xmlns:local="clr-namespace:ShowView1"
     StartupUri="View/MainView.xaml">
     <Application.Resources />
 </Application>

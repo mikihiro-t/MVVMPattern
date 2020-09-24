@@ -6,7 +6,7 @@ using System.ComponentModel;
 using System.Reactive.Disposables;
 using System.Runtime.CompilerServices;
 
-namespace OpenView2
+namespace ShowView2
 {
     class SubViewModel : INotifyPropertyChanged, IDisposable
     {
