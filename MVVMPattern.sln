@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShowView1", "OpenView\ShowView1.csproj", "{0CF4CA79-8294-4C4C-BC37-7DBF655A3B71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShowView1", "ShowView1\ShowView1.csproj", "{0CF4CA79-8294-4C4C-BC37-7DBF655A3B71}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShowView2", "OpenView2\ShowView2.csproj", "{0ED0B85A-2BD1-48C6-AC85-73AFE696F64A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShowView2", "ShowView2\ShowView2.csproj", "{0ED0B85A-2BD1-48C6-AC85-73AFE696F64A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3D0F0DF1-48FD-459E-B717-6FF80A4BA7A1}"
 	ProjectSection(SolutionItems) = preProject
