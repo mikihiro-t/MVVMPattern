@@ -6,41 +6,27 @@ using System.ComponentModel;
 using System.Reactive.Disposables;
 using System.Runtime.CompilerServices;
 
-namespace OpenView
+namespace OpenView2
 {
-    class MainViewModel : INotifyPropertyChanged, IDisposable
+    class SubViewModel : INotifyPropertyChanged, IDisposable
     {
 
-        //■1
-        public MainManager Model { get; }
-
-        //■2
-        //public MainManager Model { get; } = MainManager.Current;　//getonlyなので、initial valueかconstructorでのみ設定できる。
+        private SubManager Model { get; }
 
         public ReactiveProperty<string> Text1 { get; set; } = new ReactiveProperty<string>();
-        public ReactiveProperty<string> Text2 { get; set; } = new ReactiveProperty<string>();
+
         public ReactiveProperty<string> Title { get; set; } = new ReactiveProperty<string>();
-        public ReactiveCommand ButtonCalculate { get; } = new ReactiveCommand();
 
-        public MainViewModel()
+        public SubViewModel(SubManager model)
         {
-            //■1
-            Model = new MainManager();
-
-            //■2
-            //if (Model == null) Model = new MainManager(); //Modelがすでにある時は、ModelはMainManager.Currentになるので、全てのViewで同じModelを利用することになる。
+            Model = model;
 
             this.Text1 = Model.ToReactivePropertyAsSynchronized(x => x.Text1).AddTo(Disposable);
-            this.Text2 = Model.ToReactivePropertyAsSynchronized(x => x.Text2).AddTo(Disposable);
             this.Title = Model.ToReactivePropertyAsSynchronized(x => x.Title).AddTo(Disposable);
-            ButtonCalculate.Subscribe(_ => Calculate()).AddTo(Disposable);
 
         }
 
-        private void Calculate()
-        {
-            Model.Calculate();
-        }
+
 
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;

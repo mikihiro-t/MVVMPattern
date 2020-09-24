@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenView", "OpenView\OpenView.csproj", "{0CF4CA79-8294-4C4C-BC37-7DBF655A3B71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenView1", "OpenView\OpenView1.csproj", "{0CF4CA79-8294-4C4C-BC37-7DBF655A3B71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenView2", "OpenView2\OpenView2.csproj", "{0ED0B85A-2BD1-48C6-AC85-73AFE696F64A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{0CF4CA79-8294-4C4C-BC37-7DBF655A3B71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CF4CA79-8294-4C4C-BC37-7DBF655A3B71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CF4CA79-8294-4C4C-BC37-7DBF655A3B71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0ED0B85A-2BD1-48C6-AC85-73AFE696F64A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ED0B85A-2BD1-48C6-AC85-73AFE696F64A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ED0B85A-2BD1-48C6-AC85-73AFE696F64A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ED0B85A-2BD1-48C6-AC85-73AFE696F64A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

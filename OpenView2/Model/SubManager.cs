@@ -2,12 +2,10 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace OpenView
+namespace OpenView2
 {
-    class MainManager : INotifyPropertyChanged
+    class SubManager : INotifyPropertyChanged
     {
-        //public static MainManager Current { get; set; }
-
 
         public static int Count { get; set; }
 
@@ -18,12 +16,6 @@ namespace OpenView
             set => SetField(ref _text1, value);
         }
 
-        private string _text2;
-        public string Text2
-        {
-            get => _text2;
-            set => SetField(ref _text2, value);
-        }
 
         private string _title;
         public string Title
@@ -33,20 +25,15 @@ namespace OpenView
         }
 
 
-        public MainManager()
+        public SubManager()
         {
-            //Current = this;  //イニシャライズされるたびにCurrentは変わる。　MainManager自体はstaticで無いので複数のインスタンスがありえる。けれども、Currentは、最後にNewされたMainMagagerになる。
 
             Count += 1;
             Title = Count + "番目のMainView";
 
         }
 
-        public void Calculate()
-        {
-            Text2 = Text1 + " added";
 
-        }
 
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
