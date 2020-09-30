@@ -4,6 +4,8 @@ MVVM のパターン
 ## プロジェクト
 - ShowView1
 - ShowView2
+- ShowView3
+- ListDetail
 
 ## 解説
 https://qiita.com/hiro_t/items/967146f2ccb79318397c

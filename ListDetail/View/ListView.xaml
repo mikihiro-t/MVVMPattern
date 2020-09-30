@@ -1,0 +1,69 @@
+﻿<Window
+    x:Class="ListDetail.View.ListView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ListDetail.View"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="ListView"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <DockPanel>
+
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+            <Button
+                Width="100"
+                Height="30"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Command="{Binding ButtonAdd}"
+                Content="Add items" />
+
+            <Label Content="Add Number" />
+            <TextBox
+                Width="50"
+                Height="30"
+                VerticalAlignment="Top"
+                Text="{Binding AddedNumber.Value}" />
+
+            <Button
+                Width="100"
+                Height="30"
+                Margin="20,0,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Command="{Binding ButtonClearList}"
+                Content="Clear" />
+        </StackPanel>
+
+        <DataGrid
+            Margin="0,20,0,0"
+            AutoGenerateColumns="False"
+            ItemsSource="{Binding InfoList}">
+            <DataGrid.Columns>
+
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Command="{Binding DataContext.ButtonShow, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" CommandParameter="{Binding}">Show</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTextColumn Binding="{Binding Text1.Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Header="Text1" />
+                <DataGridTextColumn Binding="{Binding Number1.Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Header="Number1" />
+                <DataGridCheckBoxColumn Binding="{Binding Check1.Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Header="Bool1" />
+
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Command="{Binding DataContext.ButtonRemove, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" CommandParameter="{Binding}">Remove</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </DockPanel>
+</Window>

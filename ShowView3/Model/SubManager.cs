@@ -2,9 +2,9 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace ShowView2.Model
+namespace ShowView3.Model
 {
-    class SubManager : INotifyPropertyChanged
+    public class SubManager : INotifyPropertyChanged
     {
 
         public static int Count { get; set; }

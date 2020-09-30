@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Diagnostics;
+using System.Windows;
 
 namespace ShowView1
 {
@@ -18,6 +19,13 @@ namespace ShowView1
         {
             var cls = new MainView();
             cls.Show();
+        }
+
+        private void Window_Closed(object sender, System.EventArgs e)
+        {
+            //sender, eを引数として渡すると、ViewModelはViewを参照することになる？
+            vm.Closed(sender, e);
+            Debug.WriteLine("MainView Closed");
         }
     }
 }

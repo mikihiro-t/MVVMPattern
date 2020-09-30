@@ -1,34 +1,51 @@
 ﻿using Reactive.Bindings;
 using Reactive.Bindings.Extensions;
-using ShowView2.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Reactive.Disposables;
 using System.Runtime.CompilerServices;
+using ListDetail.Model;
+using ListDetail.ViewModel;
 
-namespace ShowView2.ViewModel
+namespace ListDetail.ViewModel
 {
-    class SubViewModel : INotifyPropertyChanged, IDisposable
+    public class DetailViewModel : INotifyPropertyChanged, IDisposable
     {
+        #region Variables
 
-        private SubManager Model { get; }
+        public Info Model { get; }
 
         public ReactiveProperty<string> Text1 { get; set; } = new ReactiveProperty<string>();
+        public ReactiveProperty<decimal> Number1 { get; set; } = new ReactiveProperty<decimal>();
+        public ReactiveProperty<bool> Check1 { get; set; } = new ReactiveProperty<bool>();
+        public ReactiveCommand ButtonClose { get; } = new ReactiveCommand();
+        public Action CloseAction { get; set; } //https://stackoverflow.com/questions/4376475/wpf-mvvm-how-to-close-a-window
 
-        public ReactiveProperty<string> Title { get; set; } = new ReactiveProperty<string>();
+        #endregion
 
-        public SubViewModel(SubManager model)
+        public DetailViewModel(Info model)
         {
             Model = model;
 
             this.Text1 = Model.ToReactivePropertyAsSynchronized(x => x.Text1).AddTo(Disposable);
-            this.Title = Model.ToReactivePropertyAsSynchronized(x => x.Title).AddTo(Disposable);
-
+            this.Number1 = Model.ToReactivePropertyAsSynchronized(x => x.Number1).AddTo(Disposable);
+            this.Check1 = Model.ToReactivePropertyAsSynchronized(x => x.Check1).AddTo(Disposable);
+            ButtonClose.Subscribe(_ => Close()).AddTo(Disposable);
         }
 
 
+
+        /// <summary>
+        /// Windowの、ALT+F4や、×では、呼び出され無い。
+        /// </summary>
+        private void Close()
+        {
+            CloseAction();
+            Dispose();
+
+        }
 
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
@@ -51,6 +68,7 @@ namespace ShowView2.ViewModel
             {
                 if (disposing)
                 {
+                    Debug.WriteLine("DetailViewModel Disposed");
                     this.Disposable.Dispose();
                 }
                 disposedValue = true;

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
 namespace ShowView1
@@ -48,6 +49,11 @@ namespace ShowView1
         public void Calculate()
         {
             Text2 = Text1 + " added";
+        }
+
+        public void Closed()
+        {
+            Debug.WriteLine("MainModel Closed");
         }
 
         #region INotifyPropertyChanged
